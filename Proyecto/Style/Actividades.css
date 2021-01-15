@@ -1,0 +1,119 @@
+﻿#cal1 {
+    position: absolute;
+    /*nos posicionamos en el centro del navegador*/
+    top: 50%;
+    left: 45%;
+    /*determinamos una anchura*/
+    width: 721px;
+    /*indicamos que el margen izquierdo, es la mitad de la anchura*/
+    margin-left: -300px;
+    /*determinamos una altura*/
+    height: 220px;
+    /*indicamos que el margen superior, es la mitad de la altura*/
+    margin-top: -140px;
+    padding: 5px;
+}
+
+    #cal1 table {
+        border: solid;
+        float: left;
+    }
+
+    #cal1 th {
+        border: solid;
+    }
+
+    #cal1 td {
+        border: solid;
+    }
+
+#cal2 table {
+    border: solid;
+    float: left;
+}
+
+#cal2 th {
+    border: solid;
+}
+
+#cal2 td {
+    border: solid;
+}
+
+#cal2 {
+    position: absolute;
+    /*nos posicionamos en el centro del navegador*/
+    top: 90%;
+    left: 45%;
+    /*determinamos una anchura*/
+    width: 721px;
+    /*indicamos que el margen izquierdo, es la mitad de la anchura*/
+    margin-left: -300px;
+    /*determinamos una altura*/
+    height: 220px;
+    /*indicamos que el margen superior, es la mitad de la altura*/
+    margin-top: -140px;
+    padding: 5px;
+}
+
+#cal3 table {
+    border: solid;
+    float: left;
+}
+
+#cal3 th {
+    border: solid;
+}
+
+#cal3 td {
+    border: solid;
+}
+
+#cal3 {
+    position: absolute;
+    /*nos posicionamos en el centro del navegador*/
+    top: 130%;
+    left: 45%;
+    /*determinamos una anchura*/
+    width: 721px;
+    /*indicamos que el margen izquierdo, es la mitad de la anchura*/
+    margin-left: -300px;
+    /*determinamos una altura*/
+    height: 220px;
+    /*indicamos que el margen superior, es la mitad de la altura*/
+    margin-top: -140px;
+    padding: 5px;
+}
+
+#cal4 table {
+    border: solid;
+    float: left;
+}
+
+#cal4 th {
+    border: solid;
+}
+
+#cal4 td {
+    border: solid;
+}
+
+#cal4 {
+    position: absolute;
+    /*nos posicionamos en el centro del navegador*/
+    top: 170%;
+    left: 45%;
+    /*determinamos una anchura*/
+    width: 721px;
+    /*indicamos que el margen izquierdo, es la mitad de la anchura*/
+    margin-left: -300px;
+    /*determinamos una altura*/
+    height: 220px;
+    /*indicamos que el margen superior, es la mitad de la altura*/
+    margin-top: -140px;
+    padding: 5px;
+}
+
+a {
+    color: orangered;
+}

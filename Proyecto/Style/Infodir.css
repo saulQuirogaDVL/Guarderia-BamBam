@@ -1,0 +1,32 @@
+﻿#info {
+    border-radius: 20px;
+    height: 150px;
+    background: #ff6a00;
+}
+
+.telefono {
+    width: 50%;
+    text-align: center;
+    left: 0%;
+    vertical-align: central;
+    z-index: 1;
+    text-align: center;
+}
+
+.direccion {
+    text-align: center;
+    left: 50%;
+    vertical-align: central;
+    z-index: 1;
+    text-align: center;
+}
+
+
+.txtinfo {
+    font-weight: bold;
+    line-height: 30px;
+    font: oblique;
+    color: #000;
+    font-size: 30px;
+    -webkit-text-stroke: 1px #939292;
+}

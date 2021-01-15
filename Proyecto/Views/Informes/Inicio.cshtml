@@ -1,0 +1,142 @@
+﻿
+@{
+    ViewBag.Title = "Informes";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/Style/Informe.css" rel="stylesheet" />
+    <title>@Page.Title</title>
+</head>
+<body>
+    
+        <div class="info" style="padding-top:110px">
+            <div style="width:100%; height:80px">
+
+                <p class="titulo">
+                    Informacion del niño
+                </p>
+            </div>
+
+            <div class="formu">
+                <table style="align-content:center;  background: url('http://www.gifs-animados.es/gifs-imagenes/f/floaties-estrellas/gifs-animados-floaties-estrellas-61165.gif');">
+                    <tr>
+
+                        <td class="infoninio" style="width:60%">
+                            <p>Nombre: <input type="text" name="nombre" class="ninio"></p>
+                            <p>Apellidos: <input type="text" name="apellidos" class="ninio"></p>
+                            <p>Nacionalidad: <input type="text" name="nacionalidad" class="ninio"></p>
+                            <p>Genero: <input type="text" name="genero" class="ninio"></p>
+                            <p>Fecha de Nacimiento: <input type="datetime" name="fecha" class="ninio"></p>
+                            <p>Edad: <input type="text" name="edad" class="ninio"></p>
+                            <p>Peso: <input type="text" name="peso" class="ninio"></p>
+                            <p>Altura: <input type="text" name="altura" class="ninio"></p>
+                            <p>Vacunas: <input type="text" name="vacunas" class="ninio"></p>
+                            <p>Discapacidad: <input type="text" name="discapacidad" class="ninio"></p>
+                            <p>Tutor: <input type="text" name="tutor" class="ninio"></p>
+                            <p>Curso: <input type="text" name="curso" class="ninio"></p>
+
+                        </td>
+
+
+                        <td class="imagenin">
+
+                            <img src="~/Images/txtuno.jpg" style="width:100%; height:100%" /><br />
+
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+
+
+            <div style="width:100%; height:80px">
+
+                <p class="titulodos">
+                    Informacion del tutor
+                </p>
+            </div>
+            <div class="formu">
+                <table style="align-content:center;  background: url('http://www.gifs-animados.es/gifs-imagenes/f/floaties-estrellas/gifs-animados-floaties-estrellas-61165.gif');">
+                    <tr>
+
+                        <td class="infoninio" style="width:60%">
+                            <p>CI: <input type="text" name="ci" class="tutor"></p>
+                            <p>Codigo: <input type="text" name="codigo" class="tutor"></p>
+                            <p>Nombre: <input type="text" name="nombre" class="tutor"></p>
+                            <p>Apellidos: <input type="text" name="apellidos" class="tutor"></p>
+                            <p>Nacionalidad: <input type="text" name="nacionalidad" class="tutor"></p>
+                            <p>Genero: <input type="text" name="genero" class="tutor"></p>
+                            <p>Fecha de Nacimiento: <input type="datetime" name="fecha" class="tutor"></p>
+                            <p>Telefono: <input type="text" name="telefono" class="tutor"></p>
+                            <p>Direccion: <input type="text" name="direccion" class="tutor"></p>
+                            <p>
+                                Sugerencia o Reclamo: <input type="text" name="direccion" class="reclamo">
+                                <button class="myButton" style="vertical-align:middle"><span>ENVIAR</span></button>
+                            </p>
+
+                        </td>
+
+
+                        <td class="imagenin">
+
+                            <img src="~/Images/tutor.png" style="width:80%; height:60%" /><br />
+
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+
+
+            <div style="width:100%; height:80px">
+
+                <p class="titulotres">
+                    Rol de Entrevista con el docente
+                </p>
+            </div>
+            <div class="formu">
+                <table style="align-content:center;  background: url('http://www.gifs-animados.es/gifs-imagenes/f/floaties-estrellas/gifs-animados-floaties-estrellas-61165.gif');">
+                    <tr>
+
+                        <td class="infoninio" style="width:60%">
+
+                            <p>
+                                Docente: <select name="select" class="docente">
+                                    <option value="value1">Value 1</option>
+                                    <option value="value2" selected>Value 2</option>
+                                    <option value="value3">Value 3</option>
+
+                                </select>
+                                <button class="myButton" style="vertical-align:middle"><span>ENVIAR</span></button>
+                            </p>
+
+
+                            <p>Dia: <input type="text" name="dia" class="docente"></p>
+                            <p>
+                                Hora: <input type="text" name="hora" class="docente">
+
+                            </p>
+
+                        </td>
+
+
+                        <td class="imagenin">
+
+                            <img src="~/Images/docente.jpg" style="width:40%; height:60%" /><br />
+
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+
+        </div>
+ 
+</body>
+</html>
+

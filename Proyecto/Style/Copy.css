@@ -1,0 +1,22 @@
+﻿#copy {
+    border-radius: 20px;
+    height: 100px;
+    background: #00ff21;
+}
+
+.copiar {
+    width: 100%;
+    left: 0%;
+    vertical-align: central;
+    z-index: 1;
+    text-align: center;
+}
+
+.txtcopy {
+    font-weight: bold;
+    line-height: 30px;
+    font: oblique;
+    color: #000;
+    font-size: 25px;
+    -webkit-text-stroke: 0.5px #939292;
+}

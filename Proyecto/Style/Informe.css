@@ -1,0 +1,113 @@
+﻿.titulo {
+    margin-right: 3px;
+    border: 2px dotted #b2aeae;
+    text-align: center;
+    background-color: #ebeaea;
+    font-weight: bold;
+    line-height: 30px;
+    font: oblique;
+    color: #05d1ff;
+    font-size: 40px;
+    -webkit-text-stroke: 2px #000;
+}
+
+.titulodos {
+    margin-right: 3px;
+    border: 2px dotted #b2aeae;
+    text-align: center;
+    background-color: #ebeaea;
+    font-weight: bold;
+    line-height: 30px;
+    font: oblique;
+    color: #ffd800;
+    font-size: 40px;
+    -webkit-text-stroke: 2px #000;
+}
+
+.titulotres {
+    margin-right: 3px;
+    border: 2px dotted #b2aeae;
+    text-align: center;
+    background-color: #ebeaea;
+    font-weight: bold;
+    line-height: 30px;
+    font: oblique;
+    color: #ff0451;
+    font-size: 40px;
+    -webkit-text-stroke: 2px #000;
+}
+
+.infoninio {
+    padding-left: 500px;
+    align-items: center;
+    justify-content: center;
+}
+
+.formu {
+    background: url('http://www.gifs-animados.es/gifs-imagenes/f/floaties-estrellas/gifs-animados-floaties-estrellas-61165.gif');
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ninio {
+    width: 150px;
+    height: 30px;
+    background: #b6f8ff;
+    border: none;
+    padding-left: 500px;
+}
+
+.tutor {
+    width: 150px;
+    height: 30px;
+    background: #fffeb9;
+    border: none;
+}
+
+.reclamo {
+    width: 150px;
+    height: 100px;
+    background: #fffeb9;
+    border: none;
+}
+
+.docente {
+    width: 150px;
+    height: 30px;
+    background: #ffb2d5;
+    border: none;
+}
+
+
+
+
+
+
+
+.myButton {
+    box-shadow: inset 0px 1px 0px 0px #f9eca0;
+    background: linear-gradient(to bottom, #f0c911 5%, #f2ab1e 100%);
+    background-color: #f0c911;
+    border-radius: 6px;
+    border: 1px solid #e65f44;
+    display: inline-block;
+    cursor: pointer;
+    color: #c92200;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #ded17c;
+}
+
+    .myButton:hover {
+        background: linear-gradient(to bottom, #f2ab1e 5%, #f0c911 100%);
+        background-color: #f2ab1e;
+    }
+
+    .myButton:active {
+        position: relative;
+        top: 1px;
+    }

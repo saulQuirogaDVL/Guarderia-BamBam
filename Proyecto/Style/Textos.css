@@ -1,0 +1,65 @@
+﻿#textos {
+    top: 751px;
+}
+
+.textosuno {
+    background-color: white;
+    width: 33%;
+    border-radius: 20px;
+    margin-right: 3px;
+    border: 8px outset #01c8f5;
+    text-align: center;
+    height: 400px;
+    left: 0%;
+    vertical-align: central;
+    z-index: 1;
+    text-align: center;
+}
+
+.textosdos {
+    background-color: white;
+    border-color: #ffd800;
+    left: 451px;
+    width: 34%;
+    border-radius: 20px;
+    margin-right: 3px;
+    border: 8px outset #ffd800;
+    text-align: center;
+    height: 400px;
+    left: 33%;
+    vertical-align: central;
+    z-index: 1;
+    text-align: center;
+}
+
+.textostres {
+    background-color: white;
+    border: 2px;
+    border-color: #ffd800;
+    left: 451px;
+    width: 33%;
+    border-radius: 20px;
+    margin-right: 3px;
+    border: 8px outset #ff0075;
+    text-align: center;
+    height: 400px;
+    left: 67%;
+    vertical-align: central;
+    z-index: 1;
+    text-align: center;
+}
+
+b {
+    font-size: 30px;
+    -webkit-text-stroke: 2px #0094ff;
+    text-align: center;
+    font-size: 30px;
+    color: #071985;
+}
+
+p {
+    font-weight: bold;
+    line-height: 30px;
+    font: oblique;
+    color: #071985;
+}

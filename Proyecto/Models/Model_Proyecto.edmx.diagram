@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a960961553524c0b9f12e8efabaaa234" Name="Diagram1">
+        <EntityTypeShape EntityType="Guarderia_BamBamModel.Actividades" Width="1.5" PointX="3" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Guarderia_BamBamModel.Admins" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Guarderia_BamBamModel.Califica" Width="1.5" PointX="7.5" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Guarderia_BamBamModel.Curso" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Guarderia_BamBamModel.Niños" Width="1.5" PointX="5.25" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Guarderia_BamBamModel.Permisos" Width="1.5" PointX="6" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Guarderia_BamBamModel.profesores" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Guarderia_BamBamModel.Re_Inscripcion" Width="1.5" PointX="3" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Guarderia_BamBamModel.Secretarios" Width="1.5" PointX="3" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Guarderia_BamBamModel.Solicitud_Actividad" Width="1.5" PointX="0.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Guarderia_BamBamModel.Solicitud_Permisos" Width="1.5" PointX="7.5" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Guarderia_BamBamModel.Tutor" Width="1.5" PointX="3" PointY="25.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Guarderia_BamBamModel.Usuarios" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <AssociationConnector Association="Guarderia_BamBamModel.FK__Actividad__Aprob__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="Guarderia_BamBamModel.FK__Actividad__Numer__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="Guarderia_BamBamModel.FK__Actividad__Solic__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="Guarderia_BamBamModel.FK__Admins__CI__25869641" ManuallyRouted="false" />
+        <AssociationConnector Association="Guarderia_BamBamModel.FK__Califica__Cod_Ni__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="Guarderia_BamBamModel.FK__Califica__Cod_P__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="Guarderia_BamBamModel.FK__Niños__Curso__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="Guarderia_BamBamModel.FK__profesore__Curso__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="Guarderia_BamBamModel.FK__Niños__Tutor__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="Guarderia_BamBamModel.FK__Solicitud__Cod_N__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="Guarderia_BamBamModel.FK__Permisos__Aproba__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="Guarderia_BamBamModel.FK__Permisos__Numero__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="Guarderia_BamBamModel.FK__profesores__CI__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="Guarderia_BamBamModel.FK__Re_Inscri__Tutor__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="Guarderia_BamBamModel.FK__Secretarios__CI__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="Guarderia_BamBamModel.FK__Tutor__CI__286302EC" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

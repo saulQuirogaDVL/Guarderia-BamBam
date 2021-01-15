@@ -1,0 +1,19 @@
+﻿@{
+    String valor = (String)Session["autorizacion"];
+    if (valor != null)
+    {
+        if (valor == "Tutor")
+        {
+             Layout = "~/Views/Shared/_LayoutTutor.cshtml";
+        }
+        else
+        {
+            Layout = "~/Views/Shared/_LayoutOut.cshtml";
+        }
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+}

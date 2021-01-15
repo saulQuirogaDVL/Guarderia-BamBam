@@ -1,0 +1,1043 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Guarderia_BamBamModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Actividades">
+          <Key>
+            <PropertyRef Name="Cod_Ac" />
+          </Key>
+          <Property Name="Cod_Ac" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Numero_SA" Type="varchar" MaxLength="10" />
+          <Property Name="Solicitador" Type="varchar" MaxLength="15" />
+          <Property Name="Fecha" Type="date" />
+          <Property Name="Aprobador" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="Admins">
+          <Key>
+            <PropertyRef Name="Cod_A" />
+          </Key>
+          <Property Name="Cod_A" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="CI" Type="varchar" MaxLength="15" />
+          <Property Name="Horario_Atencion" Type="varchar" MaxLength="50" />
+          <Property Name="contrasenia" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Califica">
+          <Key>
+            <PropertyRef Name="Cod_Cali" />
+          </Key>
+          <Property Name="Cod_Cali" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Cod_P" Type="varchar" MaxLength="30" />
+          <Property Name="Cod_Niño" Type="varchar" MaxLength="30" />
+          <Property Name="Observaciones" Type="varchar" MaxLength="200" />
+          <Property Name="Mes" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Curso">
+          <Key>
+            <PropertyRef Name="Codigo_Curso" />
+          </Key>
+          <Property Name="Codigo_Curso" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Horario_Desayuno" Type="varchar" MaxLength="30" />
+          <Property Name="Horario_Actividades" Type="varchar" MaxLength="30" />
+          <Property Name="Horario_Almuerzos" Type="varchar" MaxLength="30" />
+          <Property Name="Horario_Descanso" Type="varchar" MaxLength="30" />
+          <Property Name="Horario_Juego" Type="varchar" MaxLength="30" />
+          <Property Name="Cantidad_Niños" Type="int" />
+          <Property Name="Gestion" Type="date" />
+        </EntityType>
+        <EntityType Name="Niños">
+          <Key>
+            <PropertyRef Name="Cod_Niño" />
+          </Key>
+          <Property Name="Cod_Niño" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="30" />
+          <Property Name="Paterno" Type="varchar" MaxLength="30" />
+          <Property Name="Materno" Type="varchar" MaxLength="30" />
+          <Property Name="Genero" Type="varchar" MaxLength="30" />
+          <Property Name="Fecha_Nac" Type="varchar" MaxLength="30" />
+          <Property Name="Edad" Type="int" />
+          <Property Name="Peso" Type="float" />
+          <Property Name="Altura" Type="float" />
+          <Property Name="Vacunas" Type="bit" />
+          <Property Name="Discapacidad" Type="varchar" MaxLength="30" />
+          <Property Name="Tutor" Type="varchar" MaxLength="30" />
+          <Property Name="Curso" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Permisos">
+          <Key>
+            <PropertyRef Name="Cod_Per" />
+          </Key>
+          <Property Name="Cod_Per" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Numero_SP" Type="varchar" MaxLength="10" />
+          <Property Name="Fecha" Type="date" />
+          <Property Name="Aprobador" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="profesores">
+          <Key>
+            <PropertyRef Name="Cod_P" />
+          </Key>
+          <Property Name="Cod_P" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="CI" Type="varchar" MaxLength="15" />
+          <Property Name="Horario_Atencion" Type="varchar" MaxLength="50" />
+          <Property Name="Curso" Type="varchar" MaxLength="30" />
+          <Property Name="contrasenia" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Re_Inscripcion">
+          <Key>
+            <PropertyRef Name="Cod_Re" />
+          </Key>
+          <Property Name="Cod_Re" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Tutor" Type="varchar" MaxLength="15" />
+          <Property Name="Estado" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Secretarios">
+          <Key>
+            <PropertyRef Name="Cod_S" />
+          </Key>
+          <Property Name="Cod_S" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="CI" Type="varchar" MaxLength="15" />
+          <Property Name="Horario_Atencion" Type="varchar" MaxLength="50" />
+          <Property Name="contrasenia" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Solicitud_Actividad">
+          <Key>
+            <PropertyRef Name="Numero_SA" />
+          </Key>
+          <Property Name="Numero_SA" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="30" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="30" />
+          <Property Name="Destinado" Type="varchar" MaxLength="30" />
+          <Property Name="Estado" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Solicitud_Permisos">
+          <Key>
+            <PropertyRef Name="Numero_SP" />
+          </Key>
+          <Property Name="Numero_SP" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Tipo" Type="varchar" MaxLength="30" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="30" />
+          <Property Name="Curso" Type="varchar" MaxLength="30" />
+          <Property Name="Cod_Niños" Type="varchar" MaxLength="30" />
+          <Property Name="Estado" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Tutor">
+          <Key>
+            <PropertyRef Name="Cod_T" />
+          </Key>
+          <Property Name="Cod_T" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="CI" Type="varchar" MaxLength="15" />
+          <Property Name="contrasenia" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="CI" />
+          </Key>
+          <Property Name="CI" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="30" />
+          <Property Name="Paterno" Type="varchar" MaxLength="30" />
+          <Property Name="Materno" Type="varchar" MaxLength="30" />
+          <Property Name="Tipo_Us" Type="varchar" MaxLength="30" />
+          <Property Name="Telefono" Type="varchar" MaxLength="30" />
+          <Property Name="Direccion" Type="varchar" MaxLength="30" />
+          <Property Name="Genero" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <Association Name="FK__Actividad__Aprob__5EBF139D">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+          <End Role="Actividades" Type="Self.Actividades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="CI" />
+            </Principal>
+            <Dependent Role="Actividades">
+              <PropertyRef Name="Aprobador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Actividad__Numer__5CD6CB2B">
+          <End Role="Solicitud_Actividad" Type="Self.Solicitud_Actividad" Multiplicity="0..1" />
+          <End Role="Actividades" Type="Self.Actividades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Solicitud_Actividad">
+              <PropertyRef Name="Numero_SA" />
+            </Principal>
+            <Dependent Role="Actividades">
+              <PropertyRef Name="Numero_SA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Actividad__Solic__5DCAEF64">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+          <End Role="Actividades" Type="Self.Actividades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="CI" />
+            </Principal>
+            <Dependent Role="Actividades">
+              <PropertyRef Name="Solicitador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Admins__CI__25869641">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+          <End Role="Admins" Type="Self.Admins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="CI" />
+            </Principal>
+            <Dependent Role="Admins">
+              <PropertyRef Name="CI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Califica__Cod_Ni__4AB81AF0">
+          <End Role="Niños" Type="Self.Niños" Multiplicity="0..1" />
+          <End Role="Califica" Type="Self.Califica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Niños">
+              <PropertyRef Name="Cod_Niño" />
+            </Principal>
+            <Dependent Role="Califica">
+              <PropertyRef Name="Cod_Niño" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Califica__Cod_P__49C3F6B7">
+          <End Role="profesores" Type="Self.profesores" Multiplicity="0..1" />
+          <End Role="Califica" Type="Self.Califica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="profesores">
+              <PropertyRef Name="Cod_P" />
+            </Principal>
+            <Dependent Role="Califica">
+              <PropertyRef Name="Cod_P" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Niños__Curso__398D8EEE">
+          <End Role="Curso" Type="Self.Curso" Multiplicity="0..1" />
+          <End Role="Niños" Type="Self.Niños" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Curso">
+              <PropertyRef Name="Codigo_Curso" />
+            </Principal>
+            <Dependent Role="Niños">
+              <PropertyRef Name="Curso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Niños__Tutor__38996AB5">
+          <End Role="Tutor" Type="Self.Tutor" Multiplicity="0..1" />
+          <End Role="Niños" Type="Self.Niños" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tutor">
+              <PropertyRef Name="Cod_T" />
+            </Principal>
+            <Dependent Role="Niños">
+              <PropertyRef Name="Tutor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Permisos__Aproba__628FA481">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+          <End Role="Permisos" Type="Self.Permisos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="CI" />
+            </Principal>
+            <Dependent Role="Permisos">
+              <PropertyRef Name="Aprobador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Permisos__Numero__619B8048">
+          <End Role="Solicitud_Permisos" Type="Self.Solicitud_Permisos" Multiplicity="0..1" />
+          <End Role="Permisos" Type="Self.Permisos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Solicitud_Permisos">
+              <PropertyRef Name="Numero_SP" />
+            </Principal>
+            <Dependent Role="Permisos">
+              <PropertyRef Name="Numero_SP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__profesore__Curso__4316F928">
+          <End Role="Curso" Type="Self.Curso" Multiplicity="0..1" />
+          <End Role="profesores" Type="Self.profesores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Curso">
+              <PropertyRef Name="Codigo_Curso" />
+            </Principal>
+            <Dependent Role="profesores">
+              <PropertyRef Name="Curso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__profesores__CI__4222D4EF">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+          <End Role="profesores" Type="Self.profesores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="CI" />
+            </Principal>
+            <Dependent Role="profesores">
+              <PropertyRef Name="CI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Re_Inscri__Tutor__2E1BDC42">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+          <End Role="Re_Inscripcion" Type="Self.Re_Inscripcion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="CI" />
+            </Principal>
+            <Dependent Role="Re_Inscripcion">
+              <PropertyRef Name="Tutor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Secretarios__CI__2B3F6F97">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+          <End Role="Secretarios" Type="Self.Secretarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="CI" />
+            </Principal>
+            <Dependent Role="Secretarios">
+              <PropertyRef Name="CI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Solicitud__Cod_N__3C69FB99">
+          <End Role="Niños" Type="Self.Niños" Multiplicity="0..1" />
+          <End Role="Solicitud_Permisos" Type="Self.Solicitud_Permisos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Niños">
+              <PropertyRef Name="Cod_Niño" />
+            </Principal>
+            <Dependent Role="Solicitud_Permisos">
+              <PropertyRef Name="Cod_Niños" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tutor__CI__286302EC">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+          <End Role="Tutor" Type="Self.Tutor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="CI" />
+            </Principal>
+            <Dependent Role="Tutor">
+              <PropertyRef Name="CI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Guarderia_BamBamModelStoreContainer">
+          <EntitySet Name="Actividades" EntityType="Self.Actividades" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Admins" EntityType="Self.Admins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Califica" EntityType="Self.Califica" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Curso" EntityType="Self.Curso" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Niños" EntityType="Self.Niños" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Permisos" EntityType="Self.Permisos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="profesores" EntityType="Self.profesores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Re_Inscripcion" EntityType="Self.Re_Inscripcion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Secretarios" EntityType="Self.Secretarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Solicitud_Actividad" EntityType="Self.Solicitud_Actividad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Solicitud_Permisos" EntityType="Self.Solicitud_Permisos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tutor" EntityType="Self.Tutor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Actividad__Aprob__5EBF139D" Association="Self.FK__Actividad__Aprob__5EBF139D">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Actividades" EntitySet="Actividades" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Actividad__Numer__5CD6CB2B" Association="Self.FK__Actividad__Numer__5CD6CB2B">
+            <End Role="Solicitud_Actividad" EntitySet="Solicitud_Actividad" />
+            <End Role="Actividades" EntitySet="Actividades" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Actividad__Solic__5DCAEF64" Association="Self.FK__Actividad__Solic__5DCAEF64">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Actividades" EntitySet="Actividades" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Admins__CI__25869641" Association="Self.FK__Admins__CI__25869641">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Admins" EntitySet="Admins" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Califica__Cod_Ni__4AB81AF0" Association="Self.FK__Califica__Cod_Ni__4AB81AF0">
+            <End Role="Niños" EntitySet="Niños" />
+            <End Role="Califica" EntitySet="Califica" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Califica__Cod_P__49C3F6B7" Association="Self.FK__Califica__Cod_P__49C3F6B7">
+            <End Role="profesores" EntitySet="profesores" />
+            <End Role="Califica" EntitySet="Califica" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Niños__Curso__398D8EEE" Association="Self.FK__Niños__Curso__398D8EEE">
+            <End Role="Curso" EntitySet="Curso" />
+            <End Role="Niños" EntitySet="Niños" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Niños__Tutor__38996AB5" Association="Self.FK__Niños__Tutor__38996AB5">
+            <End Role="Tutor" EntitySet="Tutor" />
+            <End Role="Niños" EntitySet="Niños" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Permisos__Aproba__628FA481" Association="Self.FK__Permisos__Aproba__628FA481">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Permisos" EntitySet="Permisos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Permisos__Numero__619B8048" Association="Self.FK__Permisos__Numero__619B8048">
+            <End Role="Solicitud_Permisos" EntitySet="Solicitud_Permisos" />
+            <End Role="Permisos" EntitySet="Permisos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__profesore__Curso__4316F928" Association="Self.FK__profesore__Curso__4316F928">
+            <End Role="Curso" EntitySet="Curso" />
+            <End Role="profesores" EntitySet="profesores" />
+          </AssociationSet>
+          <AssociationSet Name="FK__profesores__CI__4222D4EF" Association="Self.FK__profesores__CI__4222D4EF">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="profesores" EntitySet="profesores" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Re_Inscri__Tutor__2E1BDC42" Association="Self.FK__Re_Inscri__Tutor__2E1BDC42">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Re_Inscripcion" EntitySet="Re_Inscripcion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Secretarios__CI__2B3F6F97" Association="Self.FK__Secretarios__CI__2B3F6F97">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Secretarios" EntitySet="Secretarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Solicitud__Cod_N__3C69FB99" Association="Self.FK__Solicitud__Cod_N__3C69FB99">
+            <End Role="Niños" EntitySet="Niños" />
+            <End Role="Solicitud_Permisos" EntitySet="Solicitud_Permisos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tutor__CI__286302EC" Association="Self.FK__Tutor__CI__286302EC">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Tutor" EntitySet="Tutor" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Guarderia_BamBamModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Actividades">
+          <Key>
+            <PropertyRef Name="Cod_Ac" />
+          </Key>
+          <Property Name="Cod_Ac" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Numero_SA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Solicitador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Fecha" Type="DateTime" Precision="0" />
+          <Property Name="Aprobador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Actividad__Aprob__5EBF139D" FromRole="Actividades" ToRole="Usuarios" />
+          <NavigationProperty Name="Solicitud_Actividad" Relationship="Self.FK__Actividad__Numer__5CD6CB2B" FromRole="Actividades" ToRole="Solicitud_Actividad" />
+          <NavigationProperty Name="Usuarios1" Relationship="Self.FK__Actividad__Solic__5DCAEF64" FromRole="Actividades" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="Admins">
+          <Key>
+            <PropertyRef Name="Cod_A" />
+          </Key>
+          <Property Name="Cod_A" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CI" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Horario_Atencion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="contrasenia" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Admins__CI__25869641" FromRole="Admins" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="Califica">
+          <Key>
+            <PropertyRef Name="Cod_Cali" />
+          </Key>
+          <Property Name="Cod_Cali" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cod_P" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Cod_Niño" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Observaciones" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Mes" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Niños" Relationship="Self.FK__Califica__Cod_Ni__4AB81AF0" FromRole="Califica" ToRole="Niños" />
+          <NavigationProperty Name="profesores" Relationship="Self.FK__Califica__Cod_P__49C3F6B7" FromRole="Califica" ToRole="profesores" />
+        </EntityType>
+        <EntityType Name="Curso">
+          <Key>
+            <PropertyRef Name="Codigo_Curso" />
+          </Key>
+          <Property Name="Codigo_Curso" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Horario_Desayuno" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Horario_Actividades" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Horario_Almuerzos" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Horario_Descanso" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Horario_Juego" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Cantidad_Niños" Type="Int32" />
+          <Property Name="Gestion" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Niños" Relationship="Self.FK__Niños__Curso__398D8EEE" FromRole="Curso" ToRole="Niños" />
+          <NavigationProperty Name="profesores" Relationship="Self.FK__profesore__Curso__4316F928" FromRole="Curso" ToRole="profesores" />
+        </EntityType>
+        <EntityType Name="Niños">
+          <Key>
+            <PropertyRef Name="Cod_Niño" />
+          </Key>
+          <Property Name="Cod_Niño" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Paterno" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Materno" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Genero" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Fecha_Nac" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Edad" Type="Int32" />
+          <Property Name="Peso" Type="Double" />
+          <Property Name="Altura" Type="Double" />
+          <Property Name="Vacunas" Type="Boolean" />
+          <Property Name="Discapacidad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Tutor" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Curso" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Califica" Relationship="Self.FK__Califica__Cod_Ni__4AB81AF0" FromRole="Niños" ToRole="Califica" />
+          <NavigationProperty Name="Curso1" Relationship="Self.FK__Niños__Curso__398D8EEE" FromRole="Niños" ToRole="Curso" />
+          <NavigationProperty Name="Tutor1" Relationship="Self.FK__Niños__Tutor__38996AB5" FromRole="Niños" ToRole="Tutor" />
+          <NavigationProperty Name="Solicitud_Permisos" Relationship="Self.FK__Solicitud__Cod_N__3C69FB99" FromRole="Niños" ToRole="Solicitud_Permisos" />
+        </EntityType>
+        <EntityType Name="Permisos">
+          <Key>
+            <PropertyRef Name="Cod_Per" />
+          </Key>
+          <Property Name="Cod_Per" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Numero_SP" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Fecha" Type="DateTime" Precision="0" />
+          <Property Name="Aprobador" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Permisos__Aproba__628FA481" FromRole="Permisos" ToRole="Usuarios" />
+          <NavigationProperty Name="Solicitud_Permisos" Relationship="Self.FK__Permisos__Numero__619B8048" FromRole="Permisos" ToRole="Solicitud_Permisos" />
+        </EntityType>
+        <EntityType Name="profesores">
+          <Key>
+            <PropertyRef Name="Cod_P" />
+          </Key>
+          <Property Name="Cod_P" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CI" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Horario_Atencion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Curso" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="contrasenia" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Califica" Relationship="Self.FK__Califica__Cod_P__49C3F6B7" FromRole="profesores" ToRole="Califica" />
+          <NavigationProperty Name="Curso1" Relationship="Self.FK__profesore__Curso__4316F928" FromRole="profesores" ToRole="Curso" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK__profesores__CI__4222D4EF" FromRole="profesores" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="Re_Inscripcion">
+          <Key>
+            <PropertyRef Name="Cod_Re" />
+          </Key>
+          <Property Name="Cod_Re" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Tutor" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Estado" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Re_Inscri__Tutor__2E1BDC42" FromRole="Re_Inscripcion" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="Secretarios">
+          <Key>
+            <PropertyRef Name="Cod_S" />
+          </Key>
+          <Property Name="Cod_S" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CI" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="Horario_Atencion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="contrasenia" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Secretarios__CI__2B3F6F97" FromRole="Secretarios" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="Solicitud_Actividad">
+          <Key>
+            <PropertyRef Name="Numero_SA" />
+          </Key>
+          <Property Name="Numero_SA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Destinado" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Estado" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Actividades" Relationship="Self.FK__Actividad__Numer__5CD6CB2B" FromRole="Solicitud_Actividad" ToRole="Actividades" />
+        </EntityType>
+        <EntityType Name="Solicitud_Permisos">
+          <Key>
+            <PropertyRef Name="Numero_SP" />
+          </Key>
+          <Property Name="Numero_SP" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Tipo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Curso" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Cod_Niños" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Estado" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Niños" Relationship="Self.FK__Solicitud__Cod_N__3C69FB99" FromRole="Solicitud_Permisos" ToRole="Niños" />
+          <NavigationProperty Name="Permisos" Relationship="Self.FK__Permisos__Numero__619B8048" FromRole="Solicitud_Permisos" ToRole="Permisos" />
+        </EntityType>
+        <EntityType Name="Tutor">
+          <Key>
+            <PropertyRef Name="Cod_T" />
+          </Key>
+          <Property Name="Cod_T" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CI" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="contrasenia" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Niños" Relationship="Self.FK__Niños__Tutor__38996AB5" FromRole="Tutor" ToRole="Niños" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Tutor__CI__286302EC" FromRole="Tutor" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="CI" />
+          </Key>
+          <Property Name="CI" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Paterno" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Materno" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Tipo_Us" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Direccion" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Genero" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Actividades" Relationship="Self.FK__Actividad__Aprob__5EBF139D" FromRole="Usuarios" ToRole="Actividades" />
+          <NavigationProperty Name="Actividades1" Relationship="Self.FK__Actividad__Solic__5DCAEF64" FromRole="Usuarios" ToRole="Actividades" />
+          <NavigationProperty Name="Admins" Relationship="Self.FK__Admins__CI__25869641" FromRole="Usuarios" ToRole="Admins" />
+          <NavigationProperty Name="Permisos" Relationship="Self.FK__Permisos__Aproba__628FA481" FromRole="Usuarios" ToRole="Permisos" />
+          <NavigationProperty Name="profesores" Relationship="Self.FK__profesores__CI__4222D4EF" FromRole="Usuarios" ToRole="profesores" />
+          <NavigationProperty Name="Re_Inscripcion" Relationship="Self.FK__Re_Inscri__Tutor__2E1BDC42" FromRole="Usuarios" ToRole="Re_Inscripcion" />
+          <NavigationProperty Name="Secretarios" Relationship="Self.FK__Secretarios__CI__2B3F6F97" FromRole="Usuarios" ToRole="Secretarios" />
+          <NavigationProperty Name="Tutor" Relationship="Self.FK__Tutor__CI__286302EC" FromRole="Usuarios" ToRole="Tutor" />
+        </EntityType>
+        <Association Name="FK__Actividad__Aprob__5EBF139D">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+          <End Role="Actividades" Type="Self.Actividades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="CI" />
+            </Principal>
+            <Dependent Role="Actividades">
+              <PropertyRef Name="Aprobador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Actividad__Numer__5CD6CB2B">
+          <End Role="Solicitud_Actividad" Type="Self.Solicitud_Actividad" Multiplicity="0..1" />
+          <End Role="Actividades" Type="Self.Actividades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Solicitud_Actividad">
+              <PropertyRef Name="Numero_SA" />
+            </Principal>
+            <Dependent Role="Actividades">
+              <PropertyRef Name="Numero_SA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Actividad__Solic__5DCAEF64">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+          <End Role="Actividades" Type="Self.Actividades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="CI" />
+            </Principal>
+            <Dependent Role="Actividades">
+              <PropertyRef Name="Solicitador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Admins__CI__25869641">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+          <End Role="Admins" Type="Self.Admins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="CI" />
+            </Principal>
+            <Dependent Role="Admins">
+              <PropertyRef Name="CI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Califica__Cod_Ni__4AB81AF0">
+          <End Role="Niños" Type="Self.Niños" Multiplicity="0..1" />
+          <End Role="Califica" Type="Self.Califica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Niños">
+              <PropertyRef Name="Cod_Niño" />
+            </Principal>
+            <Dependent Role="Califica">
+              <PropertyRef Name="Cod_Niño" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Califica__Cod_P__49C3F6B7">
+          <End Role="profesores" Type="Self.profesores" Multiplicity="0..1" />
+          <End Role="Califica" Type="Self.Califica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="profesores">
+              <PropertyRef Name="Cod_P" />
+            </Principal>
+            <Dependent Role="Califica">
+              <PropertyRef Name="Cod_P" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Niños__Curso__398D8EEE">
+          <End Role="Curso" Type="Self.Curso" Multiplicity="0..1" />
+          <End Role="Niños" Type="Self.Niños" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Curso">
+              <PropertyRef Name="Codigo_Curso" />
+            </Principal>
+            <Dependent Role="Niños">
+              <PropertyRef Name="Curso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__profesore__Curso__4316F928">
+          <End Role="Curso" Type="Self.Curso" Multiplicity="0..1" />
+          <End Role="profesores" Type="Self.profesores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Curso">
+              <PropertyRef Name="Codigo_Curso" />
+            </Principal>
+            <Dependent Role="profesores">
+              <PropertyRef Name="Curso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Niños__Tutor__38996AB5">
+          <End Role="Tutor" Type="Self.Tutor" Multiplicity="0..1" />
+          <End Role="Niños" Type="Self.Niños" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tutor">
+              <PropertyRef Name="Cod_T" />
+            </Principal>
+            <Dependent Role="Niños">
+              <PropertyRef Name="Tutor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Solicitud__Cod_N__3C69FB99">
+          <End Role="Niños" Type="Self.Niños" Multiplicity="0..1" />
+          <End Role="Solicitud_Permisos" Type="Self.Solicitud_Permisos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Niños">
+              <PropertyRef Name="Cod_Niño" />
+            </Principal>
+            <Dependent Role="Solicitud_Permisos">
+              <PropertyRef Name="Cod_Niños" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Permisos__Aproba__628FA481">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+          <End Role="Permisos" Type="Self.Permisos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="CI" />
+            </Principal>
+            <Dependent Role="Permisos">
+              <PropertyRef Name="Aprobador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Permisos__Numero__619B8048">
+          <End Role="Solicitud_Permisos" Type="Self.Solicitud_Permisos" Multiplicity="0..1" />
+          <End Role="Permisos" Type="Self.Permisos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Solicitud_Permisos">
+              <PropertyRef Name="Numero_SP" />
+            </Principal>
+            <Dependent Role="Permisos">
+              <PropertyRef Name="Numero_SP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__profesores__CI__4222D4EF">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+          <End Role="profesores" Type="Self.profesores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="CI" />
+            </Principal>
+            <Dependent Role="profesores">
+              <PropertyRef Name="CI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Re_Inscri__Tutor__2E1BDC42">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+          <End Role="Re_Inscripcion" Type="Self.Re_Inscripcion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="CI" />
+            </Principal>
+            <Dependent Role="Re_Inscripcion">
+              <PropertyRef Name="Tutor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Secretarios__CI__2B3F6F97">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+          <End Role="Secretarios" Type="Self.Secretarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="CI" />
+            </Principal>
+            <Dependent Role="Secretarios">
+              <PropertyRef Name="CI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tutor__CI__286302EC">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+          <End Role="Tutor" Type="Self.Tutor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="CI" />
+            </Principal>
+            <Dependent Role="Tutor">
+              <PropertyRef Name="CI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Guarderia_BamBamEntitiess" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Actividades" EntityType="Self.Actividades" />
+          <EntitySet Name="Admins" EntityType="Self.Admins" />
+          <EntitySet Name="Califica" EntityType="Self.Califica" />
+          <EntitySet Name="Curso" EntityType="Self.Curso" />
+          <EntitySet Name="Niños" EntityType="Self.Niños" />
+          <EntitySet Name="Permisos" EntityType="Self.Permisos" />
+          <EntitySet Name="profesores" EntityType="Self.profesores" />
+          <EntitySet Name="Re_Inscripcion" EntityType="Self.Re_Inscripcion" />
+          <EntitySet Name="Secretarios" EntityType="Self.Secretarios" />
+          <EntitySet Name="Solicitud_Actividad" EntityType="Self.Solicitud_Actividad" />
+          <EntitySet Name="Solicitud_Permisos" EntityType="Self.Solicitud_Permisos" />
+          <EntitySet Name="Tutor" EntityType="Self.Tutor" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
+          <AssociationSet Name="FK__Actividad__Aprob__5EBF139D" Association="Self.FK__Actividad__Aprob__5EBF139D">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Actividades" EntitySet="Actividades" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Actividad__Numer__5CD6CB2B" Association="Self.FK__Actividad__Numer__5CD6CB2B">
+            <End Role="Solicitud_Actividad" EntitySet="Solicitud_Actividad" />
+            <End Role="Actividades" EntitySet="Actividades" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Actividad__Solic__5DCAEF64" Association="Self.FK__Actividad__Solic__5DCAEF64">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Actividades" EntitySet="Actividades" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Admins__CI__25869641" Association="Self.FK__Admins__CI__25869641">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Admins" EntitySet="Admins" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Califica__Cod_Ni__4AB81AF0" Association="Self.FK__Califica__Cod_Ni__4AB81AF0">
+            <End Role="Niños" EntitySet="Niños" />
+            <End Role="Califica" EntitySet="Califica" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Califica__Cod_P__49C3F6B7" Association="Self.FK__Califica__Cod_P__49C3F6B7">
+            <End Role="profesores" EntitySet="profesores" />
+            <End Role="Califica" EntitySet="Califica" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Niños__Curso__398D8EEE" Association="Self.FK__Niños__Curso__398D8EEE">
+            <End Role="Curso" EntitySet="Curso" />
+            <End Role="Niños" EntitySet="Niños" />
+          </AssociationSet>
+          <AssociationSet Name="FK__profesore__Curso__4316F928" Association="Self.FK__profesore__Curso__4316F928">
+            <End Role="Curso" EntitySet="Curso" />
+            <End Role="profesores" EntitySet="profesores" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Niños__Tutor__38996AB5" Association="Self.FK__Niños__Tutor__38996AB5">
+            <End Role="Tutor" EntitySet="Tutor" />
+            <End Role="Niños" EntitySet="Niños" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Solicitud__Cod_N__3C69FB99" Association="Self.FK__Solicitud__Cod_N__3C69FB99">
+            <End Role="Niños" EntitySet="Niños" />
+            <End Role="Solicitud_Permisos" EntitySet="Solicitud_Permisos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Permisos__Aproba__628FA481" Association="Self.FK__Permisos__Aproba__628FA481">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Permisos" EntitySet="Permisos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Permisos__Numero__619B8048" Association="Self.FK__Permisos__Numero__619B8048">
+            <End Role="Solicitud_Permisos" EntitySet="Solicitud_Permisos" />
+            <End Role="Permisos" EntitySet="Permisos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__profesores__CI__4222D4EF" Association="Self.FK__profesores__CI__4222D4EF">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="profesores" EntitySet="profesores" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Re_Inscri__Tutor__2E1BDC42" Association="Self.FK__Re_Inscri__Tutor__2E1BDC42">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Re_Inscripcion" EntitySet="Re_Inscripcion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Secretarios__CI__2B3F6F97" Association="Self.FK__Secretarios__CI__2B3F6F97">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Secretarios" EntitySet="Secretarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tutor__CI__286302EC" Association="Self.FK__Tutor__CI__286302EC">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Tutor" EntitySet="Tutor" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Guarderia_BamBamModelStoreContainer" CdmEntityContainer="Guarderia_BamBamEntitiess">
+          <EntitySetMapping Name="Actividades">
+            <EntityTypeMapping TypeName="Guarderia_BamBamModel.Actividades">
+              <MappingFragment StoreEntitySet="Actividades">
+                <ScalarProperty Name="Cod_Ac" ColumnName="Cod_Ac" />
+                <ScalarProperty Name="Numero_SA" ColumnName="Numero_SA" />
+                <ScalarProperty Name="Solicitador" ColumnName="Solicitador" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Aprobador" ColumnName="Aprobador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Admins">
+            <EntityTypeMapping TypeName="Guarderia_BamBamModel.Admins">
+              <MappingFragment StoreEntitySet="Admins">
+                <ScalarProperty Name="Cod_A" ColumnName="Cod_A" />
+                <ScalarProperty Name="CI" ColumnName="CI" />
+                <ScalarProperty Name="Horario_Atencion" ColumnName="Horario_Atencion" />
+                <ScalarProperty Name="contrasenia" ColumnName="contrasenia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Califica">
+            <EntityTypeMapping TypeName="Guarderia_BamBamModel.Califica">
+              <MappingFragment StoreEntitySet="Califica">
+                <ScalarProperty Name="Cod_Cali" ColumnName="Cod_Cali" />
+                <ScalarProperty Name="Cod_P" ColumnName="Cod_P" />
+                <ScalarProperty Name="Cod_Niño" ColumnName="Cod_Niño" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Curso">
+            <EntityTypeMapping TypeName="Guarderia_BamBamModel.Curso">
+              <MappingFragment StoreEntitySet="Curso">
+                <ScalarProperty Name="Codigo_Curso" ColumnName="Codigo_Curso" />
+                <ScalarProperty Name="Horario_Desayuno" ColumnName="Horario_Desayuno" />
+                <ScalarProperty Name="Horario_Actividades" ColumnName="Horario_Actividades" />
+                <ScalarProperty Name="Horario_Almuerzos" ColumnName="Horario_Almuerzos" />
+                <ScalarProperty Name="Horario_Descanso" ColumnName="Horario_Descanso" />
+                <ScalarProperty Name="Horario_Juego" ColumnName="Horario_Juego" />
+                <ScalarProperty Name="Cantidad_Niños" ColumnName="Cantidad_Niños" />
+                <ScalarProperty Name="Gestion" ColumnName="Gestion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Niños">
+            <EntityTypeMapping TypeName="Guarderia_BamBamModel.Niños">
+              <MappingFragment StoreEntitySet="Niños">
+                <ScalarProperty Name="Cod_Niño" ColumnName="Cod_Niño" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Paterno" ColumnName="Paterno" />
+                <ScalarProperty Name="Materno" ColumnName="Materno" />
+                <ScalarProperty Name="Genero" ColumnName="Genero" />
+                <ScalarProperty Name="Fecha_Nac" ColumnName="Fecha_Nac" />
+                <ScalarProperty Name="Edad" ColumnName="Edad" />
+                <ScalarProperty Name="Peso" ColumnName="Peso" />
+                <ScalarProperty Name="Altura" ColumnName="Altura" />
+                <ScalarProperty Name="Vacunas" ColumnName="Vacunas" />
+                <ScalarProperty Name="Discapacidad" ColumnName="Discapacidad" />
+                <ScalarProperty Name="Tutor" ColumnName="Tutor" />
+                <ScalarProperty Name="Curso" ColumnName="Curso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Permisos">
+            <EntityTypeMapping TypeName="Guarderia_BamBamModel.Permisos">
+              <MappingFragment StoreEntitySet="Permisos">
+                <ScalarProperty Name="Cod_Per" ColumnName="Cod_Per" />
+                <ScalarProperty Name="Numero_SP" ColumnName="Numero_SP" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Aprobador" ColumnName="Aprobador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="profesores">
+            <EntityTypeMapping TypeName="Guarderia_BamBamModel.profesores">
+              <MappingFragment StoreEntitySet="profesores">
+                <ScalarProperty Name="Cod_P" ColumnName="Cod_P" />
+                <ScalarProperty Name="CI" ColumnName="CI" />
+                <ScalarProperty Name="Horario_Atencion" ColumnName="Horario_Atencion" />
+                <ScalarProperty Name="Curso" ColumnName="Curso" />
+                <ScalarProperty Name="contrasenia" ColumnName="contrasenia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Re_Inscripcion">
+            <EntityTypeMapping TypeName="Guarderia_BamBamModel.Re_Inscripcion">
+              <MappingFragment StoreEntitySet="Re_Inscripcion">
+                <ScalarProperty Name="Cod_Re" ColumnName="Cod_Re" />
+                <ScalarProperty Name="Tutor" ColumnName="Tutor" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Secretarios">
+            <EntityTypeMapping TypeName="Guarderia_BamBamModel.Secretarios">
+              <MappingFragment StoreEntitySet="Secretarios">
+                <ScalarProperty Name="Cod_S" ColumnName="Cod_S" />
+                <ScalarProperty Name="CI" ColumnName="CI" />
+                <ScalarProperty Name="Horario_Atencion" ColumnName="Horario_Atencion" />
+                <ScalarProperty Name="contrasenia" ColumnName="contrasenia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Solicitud_Actividad">
+            <EntityTypeMapping TypeName="Guarderia_BamBamModel.Solicitud_Actividad">
+              <MappingFragment StoreEntitySet="Solicitud_Actividad">
+                <ScalarProperty Name="Numero_SA" ColumnName="Numero_SA" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Destinado" ColumnName="Destinado" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Solicitud_Permisos">
+            <EntityTypeMapping TypeName="Guarderia_BamBamModel.Solicitud_Permisos">
+              <MappingFragment StoreEntitySet="Solicitud_Permisos">
+                <ScalarProperty Name="Numero_SP" ColumnName="Numero_SP" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Curso" ColumnName="Curso" />
+                <ScalarProperty Name="Cod_Niños" ColumnName="Cod_Niños" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tutor">
+            <EntityTypeMapping TypeName="Guarderia_BamBamModel.Tutor">
+              <MappingFragment StoreEntitySet="Tutor">
+                <ScalarProperty Name="Cod_T" ColumnName="Cod_T" />
+                <ScalarProperty Name="CI" ColumnName="CI" />
+                <ScalarProperty Name="contrasenia" ColumnName="contrasenia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="Guarderia_BamBamModel.Usuarios">
+              <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="CI" ColumnName="CI" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Paterno" ColumnName="Paterno" />
+                <ScalarProperty Name="Materno" ColumnName="Materno" />
+                <ScalarProperty Name="Tipo_Us" ColumnName="Tipo_Us" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Genero" ColumnName="Genero" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

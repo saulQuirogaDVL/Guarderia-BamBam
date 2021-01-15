@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="~/Style/Styless.css" rel="stylesheet" />
+    <!-- Including the Lobster font from Google's Font Directory -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lobster" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+    <div id="header">
+        <div id="logo">
+
+            <ul id="menu">
+                <li>
+                    <img src="~/Images/logo.jpg" height="71px" />
+                    <ul id="submenu">
+                        <li class="inicio"><a href="/Home/Index">INICIO</a></li>
+                        <li class="recuerdos"><a href="/Recuerdos/Inicio">RECUERDOS</a></li>
+                        <li class="actividades"><a href="/Actividades/Inicio">ACTIVIDADES</a></li>
+                        <li class="plantel"><a href="#">PLANTEL</a></li>
+                        <li class="informes"><a href="/Informes/Inicio">INFORMES</a></li>
+                        <li class="ofrece"><a href="/Teofrece/Inicio">TE OFRECE</a></li>
+                        <li class="ubicacion"><a href="/Ubicacion/Inicio">UBICACION</a></li>
+                        <li class="ingresar"><a href="/Login/Salir">SALIR</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <nav>
+            <marquee VSPACE=20 WIDTH=50% SCROLLAMOUNT=15 style="
+    background:url('http://www.gifs-animados.es/gifs-imagenes/f/floaties-estrellas/gifs-animados-floaties-estrellas-61165.gif');
+    font-size:55px; -webkit-text-stroke: 2px #0094ff;
+            color: white; font: oblique bold 400% cursive">Guardería "BAM BAM"</marquee>
+        </nav>
+    </div>
+    @RenderBody()
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

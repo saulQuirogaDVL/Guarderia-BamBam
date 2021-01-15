@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Te Ofrece";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/Style/Ofrece.css" rel="stylesheet" />
+    <title>@Page.Title</title>
+</head>
+<body>
+    <div class="ofrece" style="top:200px; height:750px">
+        <img src="~/Images/ofrece.png" class="teofrece" />
+    </div>
+    <div id="info">
+        @RenderPage("~/Views/Shared/_Textos.cshtml")
+    </div>
+    <div id="copy">
+        @RenderPage("~/Views/Shared/_Copy.cshtml")
+    </div>
+</body>
+</html>
+

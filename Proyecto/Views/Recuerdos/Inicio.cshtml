@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Recuerdos";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/Style/Recuerdos.css" rel="stylesheet" />
+    <title>@Page.Title</title>
+</head>
+<body>
+    <div id="slider" style=" padding-top:200px; height:750px; align-content:center">
+        <ul>
+            <li><img src="~/Images/recuerdo1.jpg" width="400" height="300" /></li>
+            <li><img src="~/Images/recuerdo5.jpg" width="400" height="300" /></li>
+            <li><img src="~/Images/recuerdo4.jpg" width="400" height="300" /></li>
+        </ul>
+    </div>
+    <div id="copy">
+        @RenderPage("~/Views/Shared/_Copy.cshtml")
+    </div>
+</body>
+</html>

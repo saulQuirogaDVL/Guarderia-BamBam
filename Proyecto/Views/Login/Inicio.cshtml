@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Inicio";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/Style/Login.css" rel="stylesheet" />
+    <title>@Page.Title</title>
+</head>
+<body>
+    <form action="/Login/Validar" method="get">
+        <div class="login-box">
+            <h1>LOGIN</h1>
+            <div class="textbox">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <input type="text" placeholder="Username" name="cuenta" value="">
+            </div>
+
+            <div class="textbox">
+                <i class="fa fa-lock" aria-hidden="true"></i>
+                <input type="password" placeholder="Password" name="pass" value="">
+            </div>
+            <div class="textbox">
+                <select id="tipo" name="tipo">
+                    <option value="Tutor">Tutor</option>
+                    <option value="Administrador">Administrador</option>
+                    <option value="Profesor">Profesor</option>
+                    <option value="Secretaria">Secretaria</option>
+                </select>
+            </div>
+           <input class="btn" type="submit" name="" value="Sign in">
+        </div>
+    </form>
+
+    <div id="copy">
+        @RenderPage("~/Views/Shared/_Copy.cshtml")
+    </div>
+
+</body>
+</html>
+

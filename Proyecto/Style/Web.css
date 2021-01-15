@@ -1,0 +1,31 @@
+﻿#web {
+}
+
+.imagen {
+    width: 40%;
+    text-align: center;
+    height: 200px;
+    left: 0%;
+    vertical-align: central;
+    z-index: 1;
+    text-align: center;
+}
+
+.textoweb {
+    text-align: center;
+    height: 100%;
+    background: url('http://www.gifs-animados.es/gifs-imagenes/f/floaties-estrellas/gifs-animados-floaties-estrellas-61165.gif');
+}
+
+.otraimage {
+    width: 20%;
+    height: 200px;
+    background: url('http://www.gifs-animados.es/gifs-imagenes/f/floaties-estrellas/gifs-animados-floaties-estrellas-61165.gif');
+}
+
+.txt {
+    font-weight: bold;
+    line-height: 30px;
+    font: oblique;
+    color: #000;
+}
